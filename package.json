@@ -24,7 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^15.2.0",
-    "electron": "^1.8.1",
+    "electron": "^1.8.2-beta.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-pug": "^3.3.0",
