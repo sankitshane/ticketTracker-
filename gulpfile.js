@@ -40,3 +40,12 @@ gulp.task("browserify", function() {
  .pipe(source("index.js"))
  .pipe(gulp.dest("./"));
 });
+
+gulp.task('watch', function() {
+    gulp.watch('./*.pug', ['views'])
+    gulp.watch('./*.sass', ['sass'])
+    gulp.watch('./*n.js', ['browserify']);
+});
+
+gulp.task('build', ['sass', 'views', 'browserify']);
+gulp.task('default', ['build', 'watch']);
