@@ -32,7 +32,7 @@ gulp.task('sass', function() {
 
 gulp.task("browserify", function() {
  var b = browserify({
- entries: ["./main.js"],
+ entries: ["./react_main.js"],
  debug: true
  });
  b.transform("babelify", {presets: ["es2015", "react"]});
@@ -44,7 +44,7 @@ gulp.task("browserify", function() {
 gulp.task('watch', function() {
     gulp.watch('./*.pug', ['views'])
     gulp.watch('./*.sass', ['sass'])
-    gulp.watch('./*n.js', ['browserify']);
+    gulp.watch('./react*.js', ['browserify']);
 });
 
 gulp.task('build', ['sass', 'views', 'browserify']);
