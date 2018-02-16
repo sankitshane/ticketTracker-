@@ -7,6 +7,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserify = require("browserify");
 var source =  require("vinyl-source-stream");
+var electron = require("electron-connect").server.create();
 
 gulp.task('views',function buildHTML(){
     gulp.src('./*.pug')
@@ -41,11 +42,17 @@ gulp.task("browserify", function() {
  .pipe(gulp.dest("./"));
 });
 
+gulp.task('electron_start',function(){
+  electron.start();
+});
+
 gulp.task('watch', function() {
-    gulp.watch('./*.pug', ['views'])
-    gulp.watch('./*.sass', ['sass'])
+    gulp.watch('./*.pug', ['views']);
+    gulp.watch('./*.sass', ['sass']);
     gulp.watch('./react*.js', ['browserify']);
+    gulp.watch('main.js', electron.restart);
+    gulp.watch(['index.html','main.css','react_main.js'], electron.reload);
 });
 
 gulp.task('build', ['sass', 'views', 'browserify']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'watch','electron_start']);

@@ -3,20 +3,21 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
-
+var client = require('electron-connect').client;
 let mainWindow
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 640, height: 500})
+  mainWindow = new BrowserWindow({width: 480, height: 550,maximizable: false})
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname,'index.html'),
     protocal: 'file:',
     slashes: true
   }))
-
+  mainWindow.setMenu(null);
   mainWindow.on('closed',function(){
     mainWindow = null
   })
+  client.create(mainWindow);
 }
 
 app.on('ready',createWindow)

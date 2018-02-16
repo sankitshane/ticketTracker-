@@ -25,6 +25,7 @@
     "babelify": "^8.0.0",
     "browserify": "^15.2.0",
     "electron": "^1.8.2-beta.4",
+    "electron-connect": "^0.6.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-pug": "^3.3.0",
