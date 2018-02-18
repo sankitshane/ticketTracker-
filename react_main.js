@@ -1,6 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class dash extends React.Component {
+  constructor(){
+    super();
+    this.state = {}
+  }
+  render(){
+    return(
+      <div>
+        <h2>Hi my name is sankit</h2>
+      </div>
+    );
+  }
+}
 
 class Header extends React.Component {
     constructor(prop){
@@ -9,11 +22,8 @@ class Header extends React.Component {
     }
     render(){
       return(
-        <div>
-          <div className='front'>
-            <h1>Ticket Tracker</h1>
-          </div>
-          <div className='tmonitor'>
+        <div className="main">
+          <div className="screen">
           </div>
         </div>
       );

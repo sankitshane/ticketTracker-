@@ -7,7 +7,7 @@ var client = require('electron-connect').client;
 let mainWindow
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 480, height: 550,maximizable: false})
+  mainWindow = new BrowserWindow({width: 480, height: 580,maximizable: false})
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname,'index.html'),
     protocal: 'file:',
