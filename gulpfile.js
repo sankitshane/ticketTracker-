@@ -50,8 +50,8 @@ gulp.task('watch', function() {
     gulp.watch('./*.pug', ['views']);
     gulp.watch('./*.sass', ['sass']);
     gulp.watch('./react*.js', ['browserify']);
-    gulp.watch('main.js', electron.restart);
-    gulp.watch(['index.html','main.css','react_main.js'], electron.reload);
+    gulp.watch(['main.js','react_main.js'], electron.restart);
+    gulp.watch(['index.html','main.css'], electron.reload);
 });
 
 gulp.task('build', ['sass', 'views', 'browserify']);
