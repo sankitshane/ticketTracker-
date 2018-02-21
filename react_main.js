@@ -7,16 +7,12 @@ class Dash extends React.Component {
     this.state = {"clicked":false}
   }
 
-  handleClick: function () {
-      if this.state.clicked {
-        this.setstate({"clicked":false});
-      }
-      else {
-        this.setstate({"clicked":true});
-      }
+  handleClick() {
+        this.setState((state) => ({ clicked : !state.clicked}));
   }
 
   render(){
+    var class_active = this.state.clicked? "makeactive": "makeinactive";
     return(
       <from className="dash_con">
         <div className="container">
@@ -32,7 +28,7 @@ class Dash extends React.Component {
           <h3>Pager</h3>
         </div>
         <div className="submit">
-          <button id="button" className={this.state.clicked} onClick={this.handleClick}></button>
+          <button id="button" className={class_active} onClick={this.handleClick.bind(this)}></button>
         </div>
       </from>
     );
