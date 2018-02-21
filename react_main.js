@@ -35,6 +35,22 @@ class Dash extends React.Component {
   }
 }
 
+class Chat extends React.Component {
+  constructor(prop){
+    super(prop);
+    var n = new Date().toDateString()
+    this.state = {today:n}
+  }
+  render(){
+    return(
+      <div className="chatScreen">
+        <h3>The Current Chart</h3>
+        <h4>{this.state.today}</h4>
+      </div>
+    );
+  }
+}
+
 class Header extends React.Component {
     constructor(prop){
       super(prop);
@@ -44,6 +60,7 @@ class Header extends React.Component {
       return(
         <div className="main">
           <div className="screen">
+            <Chat />
             <Dash />
           </div>
         </div>
